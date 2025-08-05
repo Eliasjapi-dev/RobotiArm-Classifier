@@ -194,7 +194,7 @@ This project is released under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ## 📚 References
 
-* Full project report: `Robotia Classifier Documentation.docx`
+* Full project report: `RobotiArm Classifier Documentation.docx/pdf`
 * Keras MNIST example: [https://keras.io/examples/vision/mnist\_convnet/](https://keras.io/examples/vision/mnist_convnet/)
 * PySerial Arduino tutorial: [https://realpython.com/arduino-python-communication/](https://realpython.com/arduino-python-communication/)
 * Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2005). Robot modeling and control. Wiley.
