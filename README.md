@@ -38,11 +38,12 @@ An **educational robotic sorting system** featuring a 5‑DOF PLA‑printed arm 
 ## 📂 Repository Structure
 
 ```text
-RobotiArm-Classifier/
-├── arduino_test.ino
-├── cnn_mnist_final.keras
+RobotiArm Classifier/
+├── arduino_test/
+│   └── arduino_test.ino
 ├── model/
 │   └── cnn_mnist_best.keras
+├── cnn_mnist_final.keras
 ├── cnn_mnist_class_indices.json
 ├── Train_CNN_2.ipynb
 ├── test_control.py
