@@ -45,7 +45,7 @@ An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven b
 ## 📂 Repository Structure
 
 ```
-RobotiaClassifier/
+RobotiArm Classifier/
 ├── arduino_test/
 │   └── arduino_test.ino
 ├── model/
