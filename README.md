@@ -46,17 +46,19 @@ An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven b
 
 ```
 RobotiaClassifier/
-├── arduino_test.ino
-├── cnn_mnist_final.keras
+├── arduino_test/
+│   └── arduino_test.ino
 ├── model/
 │   └── cnn_mnist_best.keras
+├── cnn_mnist_final.keras
 ├── cnn_mnist_class_indices.json
 ├── Train_CNN_2.ipynb
 ├── test_control.py
 ├── test_cnn.py
 ├── number_classifier.py
 ├── main_robot.py
-└── Robotia Classifier Documentation.docx
+├── RobotiArm Classifier Documentation.docx
+└── RobotiArm Classifier Documentation.pdf
 ```
 
 * **`arduino_test.ino`**
