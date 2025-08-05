@@ -1,0 +1,6 @@
+tensorflow>=2.6.0
+keras>=2.6.0
+opencv-python>=4.5.3.56
+numpy>=1.19.5
+pygame>=2.0.1
+pyserial>=3.5
