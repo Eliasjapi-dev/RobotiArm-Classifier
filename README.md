@@ -1,6 +1,10 @@
 # RobotiArm-Classifier
 An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven by MG996R/MG90S servos and controlled via Arduino. A Keras/TensorFlow CNN trained on MNIST (≥97% accuracy) recognizes digits 0–9, enabling the arm to autonomously pick, sort and place labeled 3D-printed pieces.
 
+<img width="1380" height="909" alt="image" src="https://github.com/user-attachments/assets/6a8d2995-9fcb-45e9-b205-adfd1ff9237b" />
+
+<img width="1702" height="1018" alt="image" src="https://github.com/user-attachments/assets/f3bbdfea-95ce-4fa2-8be3-e27a78f6d5c5" />
+
 ---
 
 ## 📖 Overview
