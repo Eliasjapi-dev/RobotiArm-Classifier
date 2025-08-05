@@ -133,8 +133,10 @@ Contributions welcome: fork, branch, PR, merge!
 
 ## 📚 References
 
-* Project report: `RobotiArm Classifier Documentation.docx/pdf`
-* [Keras MNIST example](https://keras.io/examples/vision/mnist_convnet/)
-* [Arduino docs](https://www.arduino.cc/)
-* [TensorFlow](https://www.tensorflow.org/)
-* [OpenCV](https://opencv.org/)
+* Full project report: `RobotiArm Classifier Documentation.docx/pdf`
+* Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2005). *Robot Modeling and Control*. Wiley.
+* Craig, J., & Prentice, P. (2005). *Introduction to Robotics Mechanics and Control* (3rd ed.). [PDF](https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf)
+* Arduino Documentation: [https://www.arduino.cc/](https://www.arduino.cc/)
+* OpenCV Python: [https://opencv.org/](https://opencv.org/)
+* TensorFlow/Keras: [https://www.tensorflow.org/](https://www.tensorflow.org/)
+* Tkinter: [https://docs.python.org/3/library/tkinter.html](https://docs.python.org/3/library/tkinter.html)
