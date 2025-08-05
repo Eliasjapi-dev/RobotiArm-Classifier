@@ -1,21 +1,23 @@
 # RobotiArm-Classifier
 
-An **educational robotic sorting system** featuring a 5-DOF PLA‑printed arm with MG996R/MG90S servos, controlled via Arduino, and powered by a Keras/TensorFlow CNN (MNIST, ≥97% accuracy) to recognize digits 0–9. The arm autonomously picks, sorts, and places 3D‑printed pieces.
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![Python Version](https://img.shields.io/badge/Python-3.8%2B-green.svg)
+
+An **educational robotic sorting system** featuring a 5‑DOF PLA‑printed arm with MG996R/MG90S servos, controlled via Arduino, and powered by a Keras/TensorFlow CNN (MNIST, ≥97% accuracy) to recognize digits 0–9. The arm autonomously picks, sorts, and places 3D‑printed pieces.
 
 ---
 
 <!-- HERO SECTION -->
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/6a8d2995-9fcb-45e9-b205-adfd1ff9237b" alt="RobotiArm in action" width="45%" style="margin: 0 2%" />
-  <img src="https://github.com/user-attachments/assets/f3bbdfea-95ce-4fa2-8be3-e27a78f6d5c5" alt="Vision & Control GUI" width="45%" style="margin: 0 2%" />
+  <img src="https://github.com/user-attachments/assets/6a8d2995-9fcb-45e9-b205-adfd1ff9237b" alt="Action Shot" width="350px" style="margin: 0 10px; border-radius: 8px;" />
+  <img src="https://github.com/user-attachments/assets/f3bbdfea-95ce-4fa2-8be3-e27a78f6d5c5" alt="GUI Preview" width="350px" style="margin: 0 10px; border-radius: 8px;" />
 </div>
 
-<div align="center" style="margin-top: 1rem;">
-  <a href="https://youtu.be/gvfYf3450xA" target="_blank" style="text-decoration: none;">
-    <img src="https://img.youtube.com/vi/gvfYf3450xA/maxresdefault.jpg" alt="Watch Demo" width="80%" />
-    <h3>Watch the full demo ▶️</h3>
+<div align="center" style="margin-top: 20px;">
+  <a href="https://youtu.be/gvfYf3450xA" target="_blank">
+    <img src="https://img.youtube.com/vi/gvfYf3450xA/maxresdefault.jpg" alt="Demo Video Thumbnail" width="700px" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
   </a>
+  <p><a href="https://youtu.be/gvfYf3450xA" target="_blank" style="font-size: 1.2rem; font-weight: bold; text-decoration: none;">▶️ Watch the Full Demo</a></p>
 </div>
 
 ---
@@ -24,36 +26,18 @@ An **educational robotic sorting system** featuring a 5-DOF PLA‑printed arm wi
 
 **RobotiArm Classifier** integrates:
 
-1. **Mechanical & Electronics**
-
-   * 5‑DOF PLA‑printed arm, six MG996R/MG90S servos, bearings.
-   * 5 V / 15 A power supply for stable operation.
-
-2. **Embedded Control (Arduino)**
-
-   * `arduino_test.ino`: Arduino Uno/Nano firmware.
-   * Serial protocol @9600 bps:
-     `MOVE t1 t2 t3 t4 t5 t6`
-     `GRIP OPEN | CLOSE`
-   * Acknowledgments synchronize PC commands.
-
-3. **Computer Vision & Deep Learning**
-
-   * **CNN (Keras/TensorFlow)** trained on MNIST (>97%).
-   * Preprocess: ROI crop, Otsu threshold, resize 28×28, normalize.
-   * `number_classifier.py` handles inference.
-
-4. **Python PC App**
-
-   * **Manual**: `test_control.py` (Tkinter sliders, gripper control).
-   * **Calibrate**: `test_cnn.py` (OpenCV trackbars, live prediction).
-   * **Autonomous**: `main_robot.py` (capture → classify → pick‑place → home).
+| Component                    | Description                                                                                        |
+| ---------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Mechanical & Electronics** | 5‑DOF PLA‑printed arm + MG996R/MG90S servos, powered by 5 V/15 A supply                            |
+| **Embedded Control**         | Arduino Uno/Nano firmware (`arduino_test.ino`) with simple serial commands                         |
+| **Computer Vision**          | ROI cropping, Otsu threshold, CNN inference (Keras/TensorFlow, ≥97% MNIST)                         |
+| **PC Application**           | Python GUIs: manual (`test_control.py`), calibration (`test_cnn.py`), autonomous (`main_robot.py`) |
 
 ---
 
-## 📂 Structure
+## 📂 Repository Structure
 
-```
+```text
 RobotiArm-Classifier/
 ├── arduino_test.ino
 ├── cnn_mnist_final.keras
@@ -74,9 +58,32 @@ RobotiArm-Classifier/
 
 ## ⚙️ Requirements
 
-**Hardware:** Arduino Uno/Nano, 6×MG996R/MG90S servos, 5‑DOF arm, USB camera, 5 V≥15 A supply
-
-**Software:** Python 3.8+, `tensorflow`, `keras`, `opencv-python`, `numpy`, `pygame`, `tkinter`, `pyserial`, Arduino IDE
+<table>
+  <tr>
+    <th align="left">Hardware</th>
+    <th align="left">Software</th>
+  </tr>
+  <tr>
+    <td>
+      • Arduino Uno/Nano<br>
+      • 6× MG996R/MG90S servos + gripper<br>
+      • 5‑DOF PLA arm<br>
+      • USB camera (30 FPS)<br>
+      • 5 V / 15 A power supply
+    </td>
+    <td>
+      • Python 3.8+<br>
+      • `tensorflow`<br>
+      • `keras`<br>
+      • `opencv-python`<br>
+      • `numpy`<br>
+      • `pygame`<br>
+      • `tkinter`<br>
+      • `pyserial`<br>
+      • Arduino IDE
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -88,45 +95,45 @@ cd RobotiArm-Classifier
 pip install -r requirements.txt
 ```
 
-Upload `arduino_test.ino` via Arduino IDE, then verify model files in root.
+1. Upload `arduino_test.ino` to Arduino using the IDE
+2. Verify `cnn_mnist_final.keras` & `cnn_mnist_class_indices.json` are in the root
 
 ---
 
 ## ▶️ Usage
 
-1. **Manual**: `python test_control.py --port COM3`
-2. **Calibrate**: `python test_cnn.py --port COM3`
-3. **Autonomous**: `python main_robot.py --port COM3`
+| Mode        | Command                              |
+| ----------- | ------------------------------------ |
+| Manual      | `python test_control.py --port COM3` |
+| Calibration | `python test_cnn.py --port COM3`     |
+| Autonomous  | `python main_robot.py --port COM3`   |
 
 ---
 
-## 🛠 Training
+## 🛠 Model Training
 
-Open `Train_CNN_2.ipynb`, run all cells, save best model:
+1. Open `Train_CNN_2.ipynb` in Jupyter
+2. Run all cells (data prep, model train, eval)
+3. Save best model:
 
-```python
-model.save('model/cnn_mnist_best.keras')
-```
-
-Copy model & `cnn_mnist_class_indices.json` to root.
-
----
-
-## 📄 License
-
-MIT © \[Your Name]
+   ```python
+   model.save('model/cnn_mnist_best.keras')
+   ```
+4. Copy model & `cnn_mnist_class_indices.json` to root
 
 ---
 
-## 🤝 Contribute
+## 📄 License & Contribution
 
-Fork → branch → PR → merge
+Licensed under the **MIT License**. See [LICENSE](LICENSE).
+
+Contributions welcome: fork, branch, PR, merge!
 
 ---
 
 ## 📚 References
 
-* Full report: `RobotiArm Classifier Documentation.docx/pdf`
+* Project report: `RobotiArm Classifier Documentation.docx/pdf`
 * [Keras MNIST example](https://keras.io/examples/vision/mnist_convnet/)
 * [Arduino docs](https://www.arduino.cc/)
 * [TensorFlow](https://www.tensorflow.org/)
