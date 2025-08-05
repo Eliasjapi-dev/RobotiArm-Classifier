@@ -60,7 +60,6 @@ RobotiArm Classifier/
 ├── RobotiArm Classifier Documentation.docx
 ├── RobotiArm Classifier Documentation.pdf
 └── requirements.txt
-
 ```
 
 * **`arduino_test.ino`**
