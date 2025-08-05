@@ -58,7 +58,9 @@ RobotiArm Classifier/
 ├── number_classifier.py
 ├── main_robot.py
 ├── RobotiArm Classifier Documentation.docx
-└── RobotiArm Classifier Documentation.pdf
+├── RobotiArm Classifier Documentation.pdf
+└── requirements.txt
+
 ```
 
 * **`arduino_test.ino`**
@@ -85,7 +87,7 @@ RobotiArm Classifier/
 * **`main_robot.py`**
   Main application integrating video capture, digit classification, and robotic arm control.
 
-* **`Robotia Classifier Documentation.docx`**
+* **`RobotiArm Classifier Documentation.docx/pdf`**
   Comprehensive project report covering mechanical design, electronics, kinematics, test results, and future improvements.
 
 ---
@@ -113,7 +115,7 @@ RobotiArm Classifier/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/<your-username>/RobotiaClassifier.git
+   git clone https://github.com/Eliasjapi-dev/RobotiArm-Classifier.git
    cd RobotiaClassifier
    ```
 
