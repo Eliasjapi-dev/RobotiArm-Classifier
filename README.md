@@ -1,9 +1,25 @@
 # RobotiArm-Classifier
-An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven by MG996R/MG90S servos and controlled via Arduino. A Keras/TensorFlow CNN trained on MNIST (≥97% accuracy) recognizes digits 0–9, enabling the arm to autonomously pick, sort and place labeled 3D-printed pieces.
 
-<img width="1380" height="909" alt="image" src="https://github.com/user-attachments/assets/6a8d2995-9fcb-45e9-b205-adfd1ff9237b" />
+An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven by MG996R/MG90S servos and controlled via Arduino. A Keras/TensorFlow CNN trained on MNIST (≥97% accuracy) recognizes digits 0–9, enabling the arm to autonomously pick, sort, and place labeled 3D-printed pieces.
 
-<img width="1702" height="1018" alt="image" src="https://github.com/user-attachments/assets/f3bbdfea-95ce-4fa2-8be3-e27a78f6d5c5" />
+---
+
+<!-- Hero Images -->
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6a8d2995-9fcb-45e9-b205-adfd1ff9237b" alt="RobotiArm in action" width="600" />
+  <img src="https://github.com/user-attachments/assets/f3bbdfea-95ce-4fa2-8be3-e27a78f6d5c5" alt="Vision & Control GUI" width="600" />
+</p>
+
+<!-- Demo Video -->
+
+<p align="center">
+  <a href="https://youtu.be/gvfYf3450xA" target="_blank">
+    <img src="https://img.youtube.com/vi/gvfYf3450xA/maxresdefault.jpg" alt="Watch the Demo" width="800" />
+  </a>
+</p>
+
+> **Watch the full demo**: [YouTube ▶️](https://youtu.be/gvfYf3450xA)
 
 ---
 
@@ -22,8 +38,8 @@ An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven b
    * Simple serial protocol at 9600 bps:
 
      ```
-     MOVE t1 t2 t3 t4 t5 t6  
-     GRIP OPEN | CLOSE  
+     MOVE t1 t2 t3 t4 t5 t6
+     GRIP OPEN | CLOSE
      ```
    * Each command sends back a confirmation to synchronize with the PC application.
 
@@ -49,12 +65,11 @@ An educational robotic sorting system that uses a 5-DOF PLA-printed arm driven b
 ## 📂 Repository Structure
 
 ```
-RobotiArm Classifier/
-├── arduino_test/
-│   └── arduino_test.ino
+RobotiArm-Classifier/
+├── arduino_test.ino
+├── cnn_mnist_final.keras
 ├── model/
 │   └── cnn_mnist_best.keras
-├── cnn_mnist_final.keras
 ├── cnn_mnist_class_indices.json
 ├── Train_CNN_2.ipynb
 ├── test_control.py
@@ -67,31 +82,32 @@ RobotiArm Classifier/
 ```
 
 * **`arduino_test.ino`**
-  Arduino firmware: defines six Servo objects, parses serial commands, and sends acknowledgments.
 
+  * Arduino firmware: defines six Servo objects, parses serial commands, and sends acknowledgments.
 * **`cnn_mnist_final.keras`** & **`model/cnn_mnist_best.keras`**
-  Trained CNN model weights.
 
+  * Trained CNN model weights.
 * **`cnn_mnist_class_indices.json`**
-  Mapping from class indices to digit labels (0–9).
 
+  * Mapping from class indices to digit labels (0–9).
 * **`Train_CNN_2.ipynb`**
-  Jupyter notebook for training and evaluating the CNN on MNIST.
 
+  * Jupyter notebook for training and evaluating the CNN on MNIST.
 * **`number_classifier.py`**
-  Loads the model and JSON mapping; implements `preprocess_image()` and `infer()` functions.
 
+  * Loads the model and JSON mapping; implements `preprocess_image()` and `infer()` functions.
 * **`test_control.py`**
-  Tkinter-based GUI for manual servo and gripper control via serial.
 
+  * Tkinter-based GUI for manual servo and gripper control via serial.
 * **`test_cnn.py`**
-  Calibration tool using OpenCV trackbars for ROI and threshold adjustment with live prediction overlay.
 
+  * Calibration tool using OpenCV trackbars for ROI and threshold adjustment with live prediction overlay.
 * **`main_robot.py`**
-  Main application integrating video capture, digit classification, and robotic arm control.
 
+  * Main application integrating video capture, digit classification, and robotic arm control.
 * **`RobotiArm Classifier Documentation.docx/pdf`**
-  Comprehensive project report covering mechanical design, electronics, kinematics, test results, and future improvements.
+
+  * Comprehensive project report covering mechanical design, electronics, kinematics, test results, and future improvements.
 
 ---
 
@@ -100,7 +116,7 @@ RobotiArm Classifier/
 * **Hardware**
 
   * Arduino Uno or Nano
-  * 6 × MG996R/MG90S servos + gripper
+  * 6 × MG996R/MG90S servos + gripper
   * 5-DOF PLA-printed robotic arm
   * USB camera (30 FPS)
   * 5 V ≥ 15 A power supply
@@ -119,7 +135,7 @@ RobotiArm Classifier/
 
    ```bash
    git clone https://github.com/Eliasjapi-dev/RobotiArm-Classifier.git
-   cd RobotiaClassifier
+   cd RobotiArm-Classifier
    ```
 
 2. **Install Python dependencies**
@@ -151,8 +167,7 @@ python test_control.py --port COM3
 
 ### 2. Vision Calibration
 
-```bash
-python test_cnn.py --port COM3
+```bash\python test_cnn.py --port COM3
 ```
 
 * Adjust the ROI and threshold settings, and observe live digit predictions.
@@ -188,9 +203,9 @@ This project is released under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ## 🤝 Contributing
 
-1. Fork the repository.  
-2. Create a branch: `git checkout -b feature/new-feature`.  
-3. Commit your changes: `git commit -m "Add new feature"`.  
+1. Fork the repository.
+2. Create a branch: `git checkout -b feature/new-feature`.
+3. Commit your changes: `git commit -m "Add new feature"`.
 4. Open a pull request.
 
 ---
@@ -198,9 +213,9 @@ This project is released under the **MIT License**. See the [LICENSE](LICENSE) f
 ## 📚 References
 
 * Full project report: `RobotiArm Classifier Documentation.docx/pdf`
-* Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2005). Robot modeling and control. Wiley.
-* Craig, J., & Prentice, P. (2005). Introduction to Robotics Mechanics and Control Third Edition. [https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf](https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf)
-* Documentación de Arduino. [https://www.arduino.cc/](https://www.arduino.cc/)
-* OpenCV Python. [https://opencv.org/](https://opencv.org/)
-* TensorFlow/Keras. [https://www.tensorflow.org/](https://www.tensorflow.org/)
-* Tkinter. [https://docs.python.org/3/library/tkinter.html](https://docs.python.org/3/library/tkinter.html)
+* Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2005). *Robot Modeling and Control*. Wiley.
+* Craig, J., & Prentice, P. (2005). *Introduction to Robotics Mechanics and Control* (3rd ed.). [PDF](https://www.changjiangcai.com/files/text-books/Introduction-to-Robotics-3rd-edition.pdf)
+* Arduino Documentation: [https://www.arduino.cc/](https://www.arduino.cc/)
+* OpenCV Python: [https://opencv.org/](https://opencv.org/)
+* TensorFlow/Keras: [https://www.tensorflow.org/](https://www.tensorflow.org/)
+* Tkinter: [https://docs.python.org/3/library/tkinter.html](https://docs.python.org/3/library/tkinter.html)
